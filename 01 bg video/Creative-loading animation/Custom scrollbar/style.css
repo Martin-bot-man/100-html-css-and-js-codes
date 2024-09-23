@@ -22,7 +22,7 @@ body{
     width: 10px;
 }
 ::-webkit-scrollbar-thumb{
-background-color: #fff;
+background:linear-gradient(#91b064,#b097b3) #fff;
 border-radius: 100px;
 
 }
