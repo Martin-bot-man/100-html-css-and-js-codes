@@ -1,30 +1,42 @@
-// const addButton= document.querySelector(".add");
-// const subtractButton =document.querySelector(".subtract");
-// const MultiplyButton=document.querySelector(".subtract");
-// const DivideButton =document.querySelector(".subtract");
-const clearButton  =document.querySelector(".clear");
-const resultDisplay = document.querySelector("calculator")
-const operatorButtons = document.querySelectorAll(".operator_button");
-const numberButtons =document.querySelectorAll(".number-button")
-let currentInput = "";
-let operator = null;
+// ... (rest of the code remains the same)
 
-
-function updateDisplay(){
+function updateDisplay() {
     resultDisplay.textContent = currentInput;
 }
+
 numberButtons.forEach(button => {
-    addEventListener("click", ()=> {
+    button.addEventListener("click", () => {
         currentInput += button.textContent;
         updateDisplay();
     });
 });
-operatorButtons.forEach(button => {
-    addEventListener("click",()=> {
-        if(currentInput!== ""){
-            operator=button.textContent;
-            currentInput +=`${operator}`;
+
+operatorButtons.forEach(button   
+ => {
+    button.addEventListener("click", () => {
+        if (currentInput   
+ !== "") {
+            operator = button.textContent;
+            currentInput += operator;
             updateDisplay();
         }
-    })
-})
+    });
+});
+
+clearButton.addEventListener("click", () => {
+    currentInput = "";
+    operator = null;
+    updateDisplay();
+});
+
+// Add a function to perform calculations
+function calculate() {
+    // Implement your calculation logic here
+    // For example:
+    if (operator === "+") {
+        currentInput = eval(currentInput);
+    } else if (operator === "-") {
+        // ... and so on for other operators
+    }
+    updateDisplay();
+}
