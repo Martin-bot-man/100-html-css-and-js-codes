@@ -5,6 +5,7 @@ if(inputvalue!==''){
 const list = document.createElement("li")
 const ul = document.getElementById("list-container")
 ul.appendChild(list)
+console.log(inputvalue);
 list.textContent = inputValue;
 
 //clear the input field
