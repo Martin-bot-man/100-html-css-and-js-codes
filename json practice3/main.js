@@ -1,6 +1,9 @@
 async function populate(){
     const requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-    const request = new Request(requestURL);
+    // console.log(requestURL);
+    console.log(isHttpValid('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')); // true
+
+    const request = fetch(requestURL);
     const response = await fetch(request);
     const superHeros = await response.json();
 console.log(request);

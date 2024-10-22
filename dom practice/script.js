@@ -1,3 +1,12 @@
+const date= document.getElementById("date")
+
+ function displayDate(){
+    const newDate = new Date();
+    date.textContent = newDate. toLocaleString();
+ }
+ displayDate();
+ setInterval(displayDate, 1000);
+
 const addbtn = document.getElementById("add-button")
 addbtn.addEventListener('click' ,function addItem(){
 inputvalue = document.getElementById('input-text').value;
