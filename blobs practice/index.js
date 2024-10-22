@@ -5,4 +5,5 @@ const blob = new Blob([data],{type:"text/plain"});
 const url = URL.createObjectURL(blob);
 console.log(url);
 a.href = url;
-a.download = "blob-to-download.txt";
+a.download = "Martin.pdf";
+a.click()
